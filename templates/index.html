@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Heart Disease Predictor</h2>
+    <form method="POST" action="/predict">
+      <label>Age:</label>
+      <input type="number" name="age" required>
+
+      <label>Sex:</label>
+      <select name="sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label>Chest Pain Type (CP):</label>
+      <select name="cp">
+        <option value="typical angina">Typical Angina</option>
+        <option value="atypical angina">Atypical Angina</option>
+        <option value="non-anginal">Non-Anginal</option>
+        <option value="asymptomatic">Asymptomatic</option>
+      </select>
+
+      <label>Resting BP (Trestbps):</label>
+      <input type="number" name="trestbps" required>
+
+      <label>Cholesterol:</label>
+      <input type="number" name="chol" required>
+
+      <label>Fasting Blood Sugar (FBS):</label>
+      <select name="fbs">
+        <option value="True">True</option>
+        <option value="False">False</option>
+      </select>
+
+      <label>Rest ECG:</label>
+      <input type="text" name="restecg">
+
+      <label>Max Heart Rate (Thalch):</label>
+      <input type="number" name="thalch" required>
+
+      <label>Exercise Induced Angina (Exang):</label>
+      <select name="exang">
+        <option value="True">True</option>
+        <option value="False">False</option>
+      </select>
+
+      <label>Oldpeak:</label>
+      <input type="number" step="0.1" name="oldpeak">
+
+      <label>Slope:</label>
+      <input type="text" name="slope">
+
+      <label>CA:</label>
+      <input type="number" name="ca">
+
+      <label>Thal:</label>
+      <input type="text" name="thal">
+
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
